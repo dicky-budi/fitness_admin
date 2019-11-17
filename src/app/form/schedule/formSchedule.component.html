@@ -23,7 +23,15 @@
                             <mat-form-field class="formField">
                                 <input matInput atp-time-picker placeholder="End Time" />
                             </mat-form-field>
-                            <button mat-raised-button color="primary" class="submit">Add Class</button>
+                            <mat-form-field>
+                                <mat-label>Choose Coach</mat-label>
+                                <mat-select>
+                                  <mat-option *ngFor="let coach of coaches" [value]="coach.value">
+                                    {{coach.name}}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            <button mat-raised-button color="primary" class="submit" (click)="submitClass()">Add Class</button>
                         </form>
                     </div>
 
