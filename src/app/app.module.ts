@@ -9,7 +9,6 @@ import { AppRoutingModule,routingComponent } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
-import { NgbdTimepickerBasic } from './components/timepicker/timepicker.component';
 import { AmazingTimePickerModule } from 'amazing-time-picker';
 
 import {
@@ -54,7 +53,6 @@ import {
   ],
   declarations: [
     AppComponent,
-    NgbdTimepickerBasic,
     routingComponent
   ],
   providers: [],
