@@ -1,4 +1,4 @@
-<div class="loginPlace">
+<div class="loginPlace" [ngStyle]="showSpinner ? formOnLoad() : ''">
     <div class="card">
             <div class="card-header card-header-danger text-center">
                 <h4 class="card-title">Login</h4>
@@ -15,4 +15,8 @@
                 </form>
             </div>
         </div>
+</div>
+
+<div class="spinner" *ngIf="showSpinner">
+    <mat-spinner></mat-spinner>
 </div>

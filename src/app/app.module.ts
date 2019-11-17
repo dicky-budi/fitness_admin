@@ -9,6 +9,8 @@ import { AppRoutingModule,routingComponent } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
+import { NgbdTimepickerBasic } from './components/timepicker/timepicker.component';
+import { AmazingTimePickerModule } from 'amazing-time-picker';
 
 import {
   AgmCoreModule
@@ -21,7 +23,10 @@ import {
   MatInputModule,
   MatRippleModule,
   MatTooltipModule,
-  MatSelectModule
+  MatSelectModule,
+  MatProgressSpinnerModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 } from '@angular/material';
 
 @NgModule({
@@ -39,12 +44,17 @@ import {
     MatRippleModule,
     MatTooltipModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    AmazingTimePickerModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
   ],
   declarations: [
     AppComponent,
+    NgbdTimepickerBasic,
     routingComponent
   ],
   providers: [],

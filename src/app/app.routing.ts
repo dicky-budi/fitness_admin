@@ -12,6 +12,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { TypographyComponent } from './typography/typography.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { FormSchedule } from './form/schedule/formSchedule.component';
 
 const routes: Routes =[
   {
@@ -69,6 +72,33 @@ const routes: Routes =[
       }
     ]
   },
+  {
+    path : 'schedule',
+    component : AdminLayoutComponent,
+    children: [{
+      path: '',
+      component : ScheduleComponent,
+      }
+    ]
+  },
+  {
+    path : 'employee',
+    component : AdminLayoutComponent,
+    children: [{
+      path: '',
+      component : EmployeeComponent,
+      }
+    ]
+  },
+  {
+    path : 'form-schedule',
+    component : AdminLayoutComponent,
+    children: [{
+      path: '',
+      component : FormSchedule,
+      }
+    ]
+  },
 ];
 
 @NgModule({
@@ -87,4 +117,4 @@ const routes: Routes =[
   ],
 })
 export class AppRoutingModule { }
-export const routingComponent = [LoginComponent,AdminLayoutComponent,DashboardComponent,UserProfileComponent,TableListComponent,TypographyComponent,NotificationsComponent]
+export const routingComponent = [LoginComponent,AdminLayoutComponent,DashboardComponent,UserProfileComponent,TableListComponent,TypographyComponent,NotificationsComponent,ScheduleComponent,EmployeeComponent,FormSchedule]
