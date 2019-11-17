@@ -10,6 +10,7 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 import { AmazingTimePickerModule } from 'amazing-time-picker';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import {
   AgmCoreModule
@@ -27,6 +28,7 @@ import {
   MatProgressSpinnerModule,
   MatDatepickerModule,
   MatNativeDateModule,
+  MatTableModule
 } from '@angular/material';
 
 @NgModule({
@@ -48,6 +50,8 @@ import {
     MatDatepickerModule,
     MatNativeDateModule,
     AmazingTimePickerModule,
+    MatTableModule,
+    DragDropModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })

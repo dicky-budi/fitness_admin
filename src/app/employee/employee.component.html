@@ -61,7 +61,16 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h4 class="card-title text-center">Coach</h4>
+                    <div class="row">
+                        <div class="col-md-6" [ngStyle]="{'alignSelf': 'center','textAlign':'center'}">
+                            <h4 class="card-title text-center">Coach</h4>
+                        </div>
+                        <div class="col-lg-6">
+                            <button mat-raised-button class="btn btn-info pull-right btn-sm" [routerLink]="['/form-employee']"
+                                routerLinkActive="router-link-active"><i class="material-icons">add</i>&nbsp;Add
+                                Coach</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-content table-responsive table-full-width">
                     <table class="table text-center table-hover table-bordered">

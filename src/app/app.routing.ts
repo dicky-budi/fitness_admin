@@ -15,6 +15,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { ScheduleComponent } from './schedule/schedule.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { FormSchedule } from './form/schedule/formSchedule.component';
+import { FormEmployee } from './form/employee/formEmployee.component';
+import { DetailForm } from './detailForm/detailForm.component';
 
 const routes: Routes =[
   {
@@ -82,6 +84,15 @@ const routes: Routes =[
     ]
   },
   {
+    path : 'detailForm',
+    component : AdminLayoutComponent,
+    children: [{
+      path: '',
+      component : DetailForm,
+      }
+    ]
+  },
+  {
     path : 'employee',
     component : AdminLayoutComponent,
     children: [{
@@ -96,6 +107,15 @@ const routes: Routes =[
     children: [{
       path: '',
       component : FormSchedule,
+      }
+    ]
+  },
+  {
+    path : 'form-employee',
+    component : AdminLayoutComponent,
+    children: [{
+      path: '',
+      component : FormEmployee,
       }
     ]
   },
@@ -117,4 +137,4 @@ const routes: Routes =[
   ],
 })
 export class AppRoutingModule { }
-export const routingComponent = [LoginComponent,AdminLayoutComponent,DashboardComponent,UserProfileComponent,TableListComponent,TypographyComponent,NotificationsComponent,ScheduleComponent,EmployeeComponent,FormSchedule]
+export const routingComponent = [LoginComponent,AdminLayoutComponent,DashboardComponent,UserProfileComponent,TableListComponent,TypographyComponent,NotificationsComponent,ScheduleComponent,EmployeeComponent,FormSchedule,FormEmployee,DetailForm]
