@@ -17,6 +17,9 @@ import { EmployeeComponent } from './employee/employee.component';
 import { FormSchedule } from './form/schedule/formSchedule.component';
 import { FormEmployee } from './form/employee/formEmployee.component';
 import { DetailForm } from './detailForm/detailForm.component';
+import { AttendanceLayout } from './components/attendance/layout/attendance-layout.component';
+import { CoachAttendance } from './components/attendance/coachAttendance/coachAttendance.component';
+import { MemberAttendance } from './components/attendance/memberAttendance/memberAttendance.component';
 
 const routes: Routes =[
   {
@@ -119,6 +122,15 @@ const routes: Routes =[
       }
     ]
   },
+  {
+    path : 'attendance',
+    component : AdminLayoutComponent,
+    children: [{
+      path: '',
+      component : AttendanceLayout,
+      }
+    ]
+  },
 ];
 
 @NgModule({
@@ -137,4 +149,4 @@ const routes: Routes =[
   ],
 })
 export class AppRoutingModule { }
-export const routingComponent = [LoginComponent,AdminLayoutComponent,DashboardComponent,UserProfileComponent,TableListComponent,TypographyComponent,NotificationsComponent,ScheduleComponent,EmployeeComponent,FormSchedule,FormEmployee,DetailForm]
+export const routingComponent = [LoginComponent,AdminLayoutComponent,DashboardComponent,UserProfileComponent,TableListComponent,TypographyComponent,NotificationsComponent,ScheduleComponent,EmployeeComponent,FormSchedule,FormEmployee,DetailForm,AttendanceLayout,CoachAttendance,MemberAttendance]

@@ -6,14 +6,15 @@
             <div class="card-body">
                 <form [formGroup]="form">
                     <mat-form-field class="usernameLogin" >
-                        <input matInput type="text" placeholder="Username" id="unLogin" required formControlName="username">
+                        <input matInput type="text" placeholder="Username" id="unLogin" required formControlName="username" value="dicky">
                         <mat-error *ngIf="username.invalid">{{getUsernameErrorMessage()}}</mat-error>
                     </mat-form-field>
                     <mat-form-field class="passLogin" >
-                        <input matInput type="password" formControlName="password" required placeholder="Password" id="pwLogin">
+                        <input matInput type="password" formControlName="password" required placeholder="Password" id="pwLogin" value="111111">
                         <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
                     </mat-form-field>
-                    <button [disabled]="!form.valid" mat-raised-button color="primary" class="submit" (click)="onSubmit()" >Submit</button>
+                    <!-- [disabled]="!form.valid" -->
+                    <button  mat-raised-button color="primary" class="submit" (click)="onSubmit()" >Submit</button>
                 </form>
             </div>
         </div>

@@ -1,0 +1,13 @@
+.nav-tabs-title {
+    padding-left: 10px;
+}
+
+.nav-item {
+    display: table-cell;
+
+}
+
+.nav-tabs {
+    display: table;
+    width: -webkit-fill-available;
+}
