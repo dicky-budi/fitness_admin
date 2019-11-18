@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {FormControl, Validators,FormGroup,FormBuilder} from '@angular/forms';
 
 import { showNotification } from '../notifications/notifications.component';
 
@@ -10,8 +11,30 @@ import { showNotification } from '../notifications/notifications.component';
 })  
 
 
-export class LoginComponent  {
-    constructor(private router:Router){}
+export class LoginComponent implements OnInit {
+    form: FormGroup;
+    constructor(private router:Router,private fb: FormBuilder){}
+
+    username = new FormControl('', [Validators.required]);
+    password = new FormControl('',[Validators.required]);
+
+    getUsernameErrorMessage() {
+        return this.username.hasError('required') ? 'Username must not be empty' : '';
+    }
+
+    getPasswordErrorMessage() {
+        return this.password.hasError('required') ? 'Password must not be empty' : '';
+    }
+
+    ngOnInit(){
+        this.form = this.fb.group(
+            {
+                username: ['', [Validators.required]],
+                password: ['',[Validators.required]]
+            }
+        )
+    }
+
     showSpinner = false;
     onSubmit(){
         var username = document.getElementById('unLogin');

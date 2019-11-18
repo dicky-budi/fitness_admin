@@ -1,8 +1,4 @@
 documentation
 e2e
-tsconfig.json
-tslint.json
-package-lock.json
-package.json
 /node_modules
 node_modules

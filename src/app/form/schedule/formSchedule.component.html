@@ -7,31 +7,48 @@
             <div class="card-content">
                 <div class="row formRow">
                     <div class="col-lg-12">
-                        <form>
+                        <form [formGroup]="form">
                             <mat-form-field class="formField">
-                                <input matInput type="text" placeholder="Class Name" id="nameForm">
+                                <input matInput type="text" formControlName="name" placeholder="Class Name"
+                                    id="nameForm" required>
+                                <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
                             </mat-form-field>
-                            <mat-form-field class="formField">
-                                <input matInput [matDatepicker]="picker" (focus)="picker.open()"
-                                    placeholder="Choose date">
-                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                <mat-datepicker touchUi #picker></mat-datepicker>
-                            </mat-form-field>
-                            <mat-form-field class="formField">
-                                <input matInput atp-time-picker placeholder="Start Time" />
-                            </mat-form-field>
-                            <mat-form-field class="formField">
-                                <input matInput atp-time-picker placeholder="End Time" />
-                            </mat-form-field>
-                            <mat-form-field>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <mat-form-field class="formField" hintLabel="Class Date">
+                                        <input matInput [matDatepicker]="picker" (focus)="picker.open()"
+                                            placeholder="Choose date" formControlName="date" required>
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker touchUi #picker></mat-datepicker>
+                                        <mat-error *ngIf="date.invalid">{{getDateErrorMessage()}}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-lg-4">
+                                    <mat-form-field class="formField" hintLabel="Class start time">
+                                        <input formControlName="startTime" required matInput atp-time-picker
+                                            placeholder="Start Time" />
+                                        <mat-error *ngIf="startTime.invalid">{{getStartTimeErrorMessage()}}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-lg-4">
+                                    <mat-form-field class="formField" hintLabel="Class end time">
+                                        <input matInput atp-time-picker placeholder="End Time" formControlName="endTime"
+                                            required />
+                                        <mat-error *ngIf="endTime.invalid">{{getEndTimeErrorMessage()}}</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <mat-form-field class="formField" hintLabel="Coach on class">
                                 <mat-label>Choose Coach</mat-label>
-                                <mat-select>
-                                  <mat-option *ngFor="let coach of coaches" [value]="coach.value">
-                                    {{coach.name}}
-                                  </mat-option>
+                                <mat-select formControlName="coach" required>
+                                    <mat-option *ngFor="let coach of coaches" [value]="coach.value">
+                                        {{coach.name}}
+                                    </mat-option>
                                 </mat-select>
-                              </mat-form-field>
-                            <button mat-raised-button color="primary" class="submit" (click)="submitClass()">Add Class</button>
+                                <mat-error *ngIf="coach.invalid">{{getCoachErrorMessage()}}</mat-error>
+                            </mat-form-field>
+                            <button mat-raised-button color="primary" [disabled]="!form.valid" class="submit"
+                                (click)="submitClass()">Add Class</button>
                         </form>
                     </div>
 
