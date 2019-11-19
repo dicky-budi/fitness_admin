@@ -17,9 +17,9 @@ import { EmployeeComponent } from './employee/employee.component';
 import { FormSchedule } from './form/schedule/formSchedule.component';
 import { FormEmployee } from './form/employee/formEmployee.component';
 import { DetailForm } from './detailForm/detailForm.component';
-import { AttendanceLayout } from './components/attendance/layout/attendance-layout.component';
-import { CoachAttendance } from './components/attendance/coachAttendance/coachAttendance.component';
-import { MemberAttendance } from './components/attendance/memberAttendance/memberAttendance.component';
+import { AttendanceLayout } from './attendance/layout/attendance-layout.component';
+import { CoachAttendance } from './attendance/coachAttendance/coachAttendance.component';
+import { MemberAttendance } from './attendance/memberAttendance/memberAttendance.component';
 
 const routes: Routes =[
   {

@@ -15,8 +15,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import {
   AgmCoreModule
 } from '@agm/core';
-// import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-// import { LoginComponent } from './login/login.component';
 
 import {
   MatButtonModule,
@@ -28,7 +26,11 @@ import {
   MatProgressSpinnerModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatTableModule
+  MatTableModule,
+  MatExpansionModule,
+  MatListModule,
+  MatPaginatorModule,
+  MatSortModule,
 } from '@angular/material';
 
 @NgModule({
@@ -52,6 +54,10 @@ import {
     AmazingTimePickerModule,
     MatTableModule,
     DragDropModule,
+    MatExpansionModule,
+    MatListModule,
+    MatPaginatorModule,
+    MatSortModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
