@@ -1,0 +1,35 @@
+<div class="main-content">
+    <div class="card">
+        <div class="card-header card-header-tabs card-header-primary">
+            <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                    <span class="nav-tabs-title">Attendance of :</span>
+                    <ul class="nav nav-tabs text-center" data-tabs="tabs">
+                        <li class="nav-item">
+                            <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
+                                <i class="material-icons">emoji_people</i> Coach
+                                <div class="ripple-container"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a mat-button class="nav-link" href="#messages" data-toggle="tab">
+                                <i class="material-icons">person</i> Member
+                                <div class="ripple-container"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="profile">
+                    <coach-attendance></coach-attendance>
+                </div>
+                <div class="tab-pane" id="messages">
+                    <member-attendance></member-attendance>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
