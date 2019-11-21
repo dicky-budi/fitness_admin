@@ -1,0 +1,43 @@
+<form [formGroup]="form">
+    <mat-form-field class="formField" hintLabel="Name must be same with identity card">
+        <input matInput type="text" placeholder="Coach Name" formControlName="name" id="coachNameForm" required>
+        <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <div class="row">
+        <div class="col-lg-8">
+            <mat-form-field class="formField" hintLabel="Coach's gender">
+                <mat-label>Gender</mat-label>
+                <mat-select formControlName="gender" required>
+                    <mat-option *ngFor="let gender of genders" [value]="gender.name">
+                        {{gender.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="gender.invalid">{{getGenderErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-4">
+            <mat-form-field class="formField" hintLabel="Coach's birth date">
+                <input matInput [matDatepicker]="picker" (focus)="picker.open()"
+                    placeholder="birth date" formControlName="birthdate" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker touchUi #picker></mat-datepicker>
+                <mat-error *ngIf="birthdate.invalid">{{getBirthDateErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <mat-form-field class="formField" hintLabel="Address must be same with identity card">
+        <textarea matInput placeholder="Coach Address" formControlName="address" required></textarea>
+        <mat-error *ngIf="address.invalid">{{getAddressErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="formField" hintLabel="Coach's class speciality">
+        <mat-label>Speciality</mat-label>
+        <mat-select formControlName="speciality" required>
+            <mat-option *ngFor="let speciality of specialities" [value]="speciality.name">
+                {{speciality.name}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="speciality.invalid">{{getSpecialityErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="submit" [disabled]="!form.valid" (click)="submitCoach()">Add
+        Coach</button>
+</form>

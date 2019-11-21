@@ -1,0 +1,11 @@
+.submit {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.formField{
+    padding-top: 15px;
+    padding-bottom: 10px;
+}

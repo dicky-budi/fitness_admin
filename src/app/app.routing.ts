@@ -5,21 +5,34 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
-import { LoginComponent } from './login/login.component';
+
+import { LoginLayout } from './layouts/login-layout/login-layout.component';
+import { FormLogin } from './components/form/login/login.component';
+
+import { ScheduleFormLayout } from './layouts/form-layout/schedule/formSchedule.component';
+import { FormSchedule } from './components/form/schedule/schedule.component';
+
+import { EmployeeFormLayout } from './layouts/form-layout/employee/formEmployee.component';
+import { FormEmployee } from './components/form/employee/employee.component';
+
+import { ScheduleLayout } from './layouts/schedule-layout/schedule.component';
+import { TodayScheduleTable } from './components/table/schedule/today/schedule-today.component';
+
+import { EmployeeLayout } from './layouts/employee-layout/employee.component';
+import { TableEmployee } from './components/table/employee/employee.component';
+
+import { CoachAttendLayout } from './layouts/attend-layout/coach/attend.component';
+
+import { AttendanceLayout } from './layouts/attendance-layout/attendance-layout.component';
+import { CoachAttendance } from './attendance/coachAttendance/coachAttendance.component';
+import { MemberAttendance } from './attendance/memberAttendance/memberAttendance.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
-import { TypographyComponent } from './typography/typography.component';
+import { TableListComponent } from './trashSoon/table-list/table-list.component';
+import { TypographyComponent } from './trashSoon/typography/typography.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { ScheduleComponent } from './schedule/schedule.component';
-import { EmployeeComponent } from './employee/employee.component';
-import { FormSchedule } from './form/schedule/formSchedule.component';
-import { FormEmployee } from './form/employee/formEmployee.component';
-import { DetailForm } from './detailForm/detailForm.component';
-import { AttendanceLayout } from './attendance/layout/attendance-layout.component';
-import { CoachAttendance } from './attendance/coachAttendance/coachAttendance.component';
-import { MemberAttendance } from './attendance/memberAttendance/memberAttendance.component';
+
 
 const routes: Routes =[
   {
@@ -29,7 +42,7 @@ const routes: Routes =[
   },
   {
     path : 'login',
-    component : LoginComponent
+    component : LoginLayout
   },
   {
     path : 'dashboard',
@@ -82,16 +95,16 @@ const routes: Routes =[
     component : AdminLayoutComponent,
     children: [{
       path: '',
-      component : ScheduleComponent,
+      component : ScheduleLayout,
       }
     ]
   },
   {
-    path : 'detailForm',
+    path : 'coachAttend',
     component : AdminLayoutComponent,
     children: [{
       path: '',
-      component : DetailForm,
+      component : CoachAttendLayout,
       }
     ]
   },
@@ -100,7 +113,7 @@ const routes: Routes =[
     component : AdminLayoutComponent,
     children: [{
       path: '',
-      component : EmployeeComponent,
+      component : EmployeeLayout,
       }
     ]
   },
@@ -109,7 +122,7 @@ const routes: Routes =[
     component : AdminLayoutComponent,
     children: [{
       path: '',
-      component : FormSchedule,
+      component : ScheduleFormLayout,
       }
     ]
   },
@@ -118,7 +131,7 @@ const routes: Routes =[
     component : AdminLayoutComponent,
     children: [{
       path: '',
-      component : FormEmployee,
+      component : EmployeeFormLayout,
       }
     ]
   },
@@ -149,4 +162,4 @@ const routes: Routes =[
   ],
 })
 export class AppRoutingModule { }
-export const routingComponent = [LoginComponent,AdminLayoutComponent,DashboardComponent,UserProfileComponent,TableListComponent,TypographyComponent,NotificationsComponent,ScheduleComponent,EmployeeComponent,FormSchedule,FormEmployee,DetailForm,AttendanceLayout,CoachAttendance,MemberAttendance]
+export const routingComponent = [LoginLayout,FormLogin,AdminLayoutComponent,DashboardComponent,EmployeeFormLayout,FormEmployee,UserProfileComponent,TableListComponent,TypographyComponent,NotificationsComponent,ScheduleLayout,EmployeeLayout,TableEmployee,ScheduleFormLayout,TodayScheduleTable,FormSchedule,CoachAttendLayout,AttendanceLayout,CoachAttendance,MemberAttendance]
