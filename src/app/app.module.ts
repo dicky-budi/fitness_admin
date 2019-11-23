@@ -1,9 +1,9 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, } from '@angular/http';
 import { RouterModule } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule,routingComponent } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -32,6 +32,7 @@ import {
   MatPaginatorModule,
   MatSortModule,
   MatGridListModule,
+  
 } from '@angular/material';
 
 @NgModule({
@@ -60,6 +61,7 @@ import {
     MatPaginatorModule,
     MatSortModule,
     MatGridListModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
