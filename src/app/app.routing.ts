@@ -33,6 +33,13 @@ import { FormEmployee } from './components/form/employee/employee.component';
 
 /* ------------------ end employee form layout & component ------------------ */
 
+/* ------------------ ANCHOR switch form layout & component ----------------- */
+
+import { SwitchFormLayout } from './layouts/form-layout/switch/switch.component';
+import { SwitchForm } from './components/form/switch/switch.component';
+
+/* ------------------- end switch form layout & component ------------------- */
+
 /* ----------- ANCHOR  schedule layout and today's schedule table ----------- */
 
 import { ScheduleLayout } from './layouts/schedule-layout/schedule.component';
@@ -168,6 +175,15 @@ const routes: Routes =[
     ]
   },
   {
+    path : 'form-switch',
+    component : AdminLayoutComponent,
+    children: [{
+      path: '',
+      component : SwitchFormLayout,
+      }
+    ]
+  },
+  {
     path : 'form-employee',
     component : AdminLayoutComponent,
     children: [{
@@ -216,6 +232,7 @@ export const routingComponent = [
   ScheduleLayout,ScheduleFormLayout,TodayScheduleTable,FormSchedule,
   CoachAttendLayout,AttendanceLayout,
   EmployeeLayout,TableEmployee,
+  SwitchFormLayout,SwitchForm,
   CoachAttendance,MemberAttendance]
 
 /* -------------------------- end routing component ------------------------- */

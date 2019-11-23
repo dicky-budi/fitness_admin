@@ -31,6 +31,7 @@ import {
   MatListModule,
   MatPaginatorModule,
   MatSortModule,
+  MatGridListModule,
 } from '@angular/material';
 
 @NgModule({
@@ -58,6 +59,7 @@ import {
     MatListModule,
     MatPaginatorModule,
     MatSortModule,
+    MatGridListModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
