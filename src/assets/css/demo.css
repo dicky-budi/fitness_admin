@@ -15,6 +15,23 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+.bgBody {
+  background:url('../img/bgLog2.png')no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment : fixed;
+}
+
+.white {
+  color: white !important;
+}
+
+.border-white {
+  border-color: white !important;
+}
+
 .tim-typo{
   padding-left: 25%;
   margin-bottom: 40px;
